@@ -7,16 +7,18 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/public.css' /*引入公共样式*/
+import VCharts from 'v-charts'
+
 //vue-resource使用
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
-
 Vue.use(Vuex)
-
+Vue.use(ElementUI)
+Vue.use(VCharts)
 // import Api from './api/index.js';  axios使用
 // Vue.prototype.$api = Api;
 
-Vue.use(ElementUI)
+
 Vue.config.productionTip = false
 
 

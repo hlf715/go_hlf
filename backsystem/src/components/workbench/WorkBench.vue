@@ -62,18 +62,68 @@
                 </el-row>
             </el-col>
 
-            <el-col id="centerright" class="" :span="8">
-                <div class=""></div>
+            <el-col id="centerright" class="publicH2" :span="8">
+                <h2>
+                    <span>待办事项</span><span class="todobadge">99+</span>
+                    <span class="float-r" style="cursor:pointer;">
+                        <i class="el-icon-setting" @click="FuntodolistSetOpen"></i>
+                        <i class="el-icon-refresh-left" style="margin-left:10px;"></i>
+                    </span>
+                </h2>
+                <el-table :data="tableData" style="width: 100%" :show-header="false">
+                    <el-table-column label="姓名" width="430" min-width="430">
+                        <template slot-scope="scope">
+                            <el-tag size="medium">订单</el-tag>
+                            {{ scope.row.msg }}
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="操作">
+                        <template slot-scope="">
+                            <el-button  size="mini" type="text">去处理</el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
             </el-col>
         </el-row>
 
         <el-row class="marBottom20" type="flex">
-            <el-col id="bottomleft" class="" :span="16">
-                <div></div>
+            <el-col id="bottomleft" class="publicH2" :span="16">
+                <h2>
+                     <el-dropdown trigger="click">
+                        <span class="el-dropdown-link" style="color: #444444;font-weight: normal;font-size: 16px;">
+                            新增潜客<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>黄金糕</el-dropdown-item>
+                            <el-dropdown-item>狮子头</el-dropdown-item>
+                            <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                     <span class="float-r"></span>
+                </h2>
+                <div style="width:100%;height:265px;">
+                    <ve-line :data="chartData" height="265px" :legend-visible="false"></ve-line>
+                </div>
+               
             </el-col>
 
-            <el-col id="bottomright" class="" :span="8">
-                <div class=""></div>
+            <el-col id="bottomright" class="publicH2" :span="8">
+                <h2>
+                    <el-dropdown trigger="click">
+                        <span class="el-dropdown-link" style="color: #444444;font-weight: normal;font-size: 16px;">
+                            销售漏斗图<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>黄金糕</el-dropdown-item>
+                            <el-dropdown-item>狮子头</el-dropdown-item>
+                            <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                     <span class="float-r"></span>
+                </h2>
+                <div style="width:100%;height:265px;">
+                    <ve-funnel :data="chartData1" height="265px" :legend-visible="false"></ve-funnel>
+                </div>
             </el-col>
         </el-row>
 
@@ -103,6 +153,17 @@
             </span>
         </el-dialog>
 
+        <el-dialog width="720px"
+            :title="dialogTodolistSet.title"
+            :visible.sync="dialogTodolistSet.isOpen"
+            :close-on-click-modal="false">
+            <p>这里插入表格</p>
+            
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogTodolistSet.isOpen = false">取 消</el-button>
+                <el-button type="primary" @click="FunTodolistConfirm">确 定</el-button>
+            </span>
+        </el-dialog>
 
     </div>
 </template>
@@ -115,12 +176,45 @@
                     title:"自定义快捷入口",
                     isOpen:false
                 },
-                widthData:'',
+                dialogTodolistSet:{
+                    title:"待办事项管理",
+                    isOpen:false
+                },
+
+                widthData:'',          //根据浏览器宽度自定义模块宽度
                 pageSelectedBtns:[],
                 selectedBtns:[],
                 noSelectedbtns:[],
                 noSelect:[],
-                activeName:"今天"
+
+                tableData: [{
+                        msg: '欠费待补缴：3元',
+                    }, {
+                        msg: '欠费待补缴：3元',
+                    }, {
+                        msg: '欠费待补缴：3元',
+                    }, {
+                        msg: '欠费待补缴：3元',
+                }],
+                chartData: {
+                    columns: ['日期', '新增潜客'],
+                    rows: [
+                        { '日期': '2020-07-23', '新增潜客': 0 },
+                        { '日期': '2020-07-27', '新增潜客': 0 },
+                        { '日期': '2020-07-30', '新增潜客': 5 },
+                        { '日期': '2020-08-01', '新增潜客': 6 },
+                        { '日期': '2020-08-04', '新增潜客': 1 }
+                    ]
+                },
+                chartData1: {
+                    columns: ['状态', '数值'],
+                    rows: [
+                        { '状态': '展示', '数值': 900 },
+                        { '状态': '访问', '数值': 600 },
+                        { '状态': '点击', '数值': 300 },
+                        { '状态': '订单', '数值': 100 }
+                    ]
+                },
             }
         },
         methods:{
@@ -151,6 +245,14 @@
                 this.noSelect = [...this.noSelectedbtns];
                 this.dialogCustom.isOpen = false;
                 this.widthData = Math.round(100 / parseFloat(this.pageSelectedBtns.length) * 100) / 100.00 + "%";
+            },
+
+            FuntodolistSetOpen(){
+                //这里请求后台数据填入弹窗表格
+                this.dialogTodolistSet.isOpen = true;
+            },
+            FunTodolistConfirm(){
+
             }
         },
         created:function(){
@@ -312,21 +414,31 @@
 
 
 #centerright{
+    padding: 0 20px;
     height: 280px;
 }
-
-
+.todobadge{
+     padding: 0 8px;
+     border-radius:8px;
+     background-color:#ff6e72;
+     margin-left: 5px;
+     color: #ffffff;
+}
 
 
 
 
 #bottomleft{
+    padding: 0 20px;
     height: 316px;
     margin-right: 20px;
 }
 
 
+
+
 #bottomright{
+    padding: 0 20px;
     height: 316px;
 }
 </style>
