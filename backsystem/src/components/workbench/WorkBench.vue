@@ -13,8 +13,8 @@
                 </el-col>
             </el-col>
         </el-row>
-        <el-row>
-            <el-col class="minH170 publicH2" :span="24">
+        <el-row class="marBottom20">
+            <el-col id="quickenter" class="publicH2" :span="24">
                <h2>
                     <span>快捷入口</span>
                     <span class="float-r publicSet" @click="FuncustomOpen">自定义<i class="el-icon-setting"></i></span>
@@ -27,14 +27,56 @@
                 </ul>
             </el-col>
         </el-row>
-        <el-row>
-            <el-col :span="16">
-                <div class=""></div>
+
+        <el-row class="marBottom20" type="flex">
+            <el-col id="centerleft" class="publicH2" :span="16">
+                <h2>
+                    <span>数据汇总
+                        <i style="margin-left:10px;cursor:pointer;" class="el-icon-view"></i>
+                    </span>
+                    <span class="float-r">
+                        <span class="datatab" @click="FunChangedate(1)">今天</span>
+                        <span class="datatab" @click="FunChangedate(2)">本周</span>
+                        <span class="datatab" @click="FunChangedate(3)">本月</span>
+                    </span>
+               </h2>
+                <el-row style="height:114px">
+                    <el-col class="centerleftcol" :span="12">
+                        <span class="txtC">新增潜客</span>
+                        <strong class="numC">0</strong>
+                    </el-col>
+                    <el-col class="centerleftcol" :span="12">
+                        <span class="txtC">报课金额</span>
+                        <strong class="numC">￥1600.00</strong>
+                    </el-col>
+                </el-row>
+                <el-row style="height:114px">
+                    <el-col class="centerleftcol" :span="12">
+                        <span class="txtC">消课课时</span>
+                        <strong class="numC">10</strong>
+                    </el-col>
+                    <el-col class="centerleftcol" :span="12">
+                        <span class="txtC">消课金额</span>
+                        <strong class="numC">￥84.90</strong>
+                    </el-col>
+                </el-row>
             </el-col>
-            <el-col :span="8">
+
+            <el-col id="centerright" class="" :span="8">
                 <div class=""></div>
             </el-col>
         </el-row>
+
+        <el-row class="marBottom20" type="flex">
+            <el-col id="bottomleft" class="" :span="16">
+                <div></div>
+            </el-col>
+
+            <el-col id="bottomright" class="" :span="8">
+                <div class=""></div>
+            </el-col>
+        </el-row>
+
 
 
         <el-dialog width="720px"
@@ -78,9 +120,15 @@
                 selectedBtns:[],
                 noSelectedbtns:[],
                 noSelect:[],
+                activeName:"今天"
             }
         },
         methods:{
+            FunChangedate(n){
+                console.log(n)
+            },
+
+
             FuncustomOpen(){
                 this.dialogCustom.isOpen = true;
                 this.selectedBtns = [...this.pageSelectedBtns];
@@ -114,7 +162,7 @@
     }
 </script>
 <style scoped>
- .el-row{
+ .el-col{
     background: #ffffff;
  }
 
@@ -136,7 +184,9 @@
     margin-bottom: 20px;
 }
 
-.minH170{
+
+
+#quickenter{
     height: 170px;
     padding: 0 20px;
 }
@@ -155,7 +205,6 @@
     color: #858585;
     cursor: pointer;
 }
-
 .pageUl {
     width: 100%;
     height: 79px;
@@ -181,10 +230,6 @@
     padding-top: 5px;
     cursor: pointer;
 }
-
-
-
-
 .addUl{
     padding: 10px 0;
     border-bottom: 1px solid #d5d5d5;
@@ -209,19 +254,79 @@
     right: -3px;
     cursor: pointer;
 }
-
 .bgiconIDelete{
     background-image: url(../../assets/icons/deletedown.png);
 }
 .bgiconIAdd{
     background-image: url(../../assets/icons/addup.png);
 }
-
 .deleteUl{
     padding: 10px 0;
 }
 .deleteUl li{
     display: inline-block;
     margin: 15px 21px 10px 16px;
+}
+
+
+
+
+
+#centerleft{
+    height: 280px;
+    padding: 0 20px;
+    margin-right: 20px;
+}
+.datatab{
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 25px;
+    height: 48px;
+    color: #949494;
+    cursor: pointer;
+    border-bottom: 2px solid #f5787c;
+}
+
+.centerleftcol{
+    height: 114px;
+    line-height: 114px;
+    text-align: left;
+}
+.txtC{
+    color: #999999;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.numC{
+    font-size: 34px;
+    color: #444444;
+}
+
+
+
+
+
+
+
+
+
+
+#centerright{
+    height: 280px;
+}
+
+
+
+
+
+
+#bottomleft{
+    height: 316px;
+    margin-right: 20px;
+}
+
+
+#bottomright{
+    height: 316px;
 }
 </style>
