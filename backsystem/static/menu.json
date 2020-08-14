@@ -5,8 +5,9 @@
       "name": "工作台",
       "index": "1",
       "children":[{
-        "name": "工作台",
-        "index": "1-1"
+          "name": "工作台",
+          "index": "1-1",
+          "path":"/"
       }]
     },
     {
@@ -14,15 +15,18 @@
       "index": "2",
       "children": [{
           "name": "官网设置",
-          "index": "2-1"
+          "index": "2-1",
+          "path":"/uniquebranch/WebsiteSet"
         },
         {
           "name": "活动管理",
-          "index": "2-2"
+          "index": "2-2",
+          "path":"/uniquebranch/ActivityGL"
         },
         {
           "name": "展示课程",
-          "index": "2-3"
+          "index": "2-3",
+          "path":"/uniquebranch/ShowCourse"
         }
       ]
     },
@@ -31,19 +35,24 @@
       "index": "3",
       "children": [{
           "name": "商品管理",
-          "index": "3-1"
+          "index": "3-1",
+          "path":"/marketingcenter/GoodsGL"
+          
         },
         {
           "name": "优惠券",
-          "index": "3-2"
+          "index": "3-2",
+          "path":"/marketingcenter/CouponGL"
         },
         {
           "name": "问卷管理",
-          "index": "3-3"
+          "index": "3-3",
+          "path":"/marketingcenter/QuestionnaireGL"
         },
         {
           "name": "转介绍管理",
-          "index": "3-4"
+          "index": "3-4",
+          "path":"/marketingcenter/ReferralGL"
         }
       ]
     },
@@ -52,31 +61,38 @@
       "index": "4",
       "children": [{
           "name": "名单管理",
-          "index": "4-1"
+          "index": "4-1",
+          "path":"/sales/namelistGL"
         },
         {
           "name": "潜客管理",
-          "index": "4-2"
+          "index": "4-2",
+          "path":"/sales/PotentialGL"
         },
         {
           "name": "来访查询",
-          "index": "4-3"
+          "index": "4-3",
+          "path":"/sales/VisitQuery"
         },
         {
           "name": "试听管理",
-          "index": "4-4"
+          "index": "4-4",
+          "path":"/sales/AuditionGL"
         },
         {
           "name": "订单推送",
-          "index": "4-5"
+          "index": "4-5",
+          "path":"/sales/OrderPush"
         },
         {
           "name": "续费预警",
-          "index": "4-6"
+          "index": "4-6",
+          "path":"/sales/RenewalWarn"
         },
         {
           "name": "渠道管理",
-          "index": "4-7"
+          "index": "4-7",
+          "path":"/sales/ChannelGL"
         }
       ]
     },
@@ -85,27 +101,33 @@
       "index": "5",
       "children": [{
           "name": "学员中心",
-          "index": "5-1"
+          "index": "5-1",
+          "path":"/educational/StudentCenter"
         },
         {
           "name": "班级管理",
-          "index": "5-2"
+          "index": "5-2",
+          "path":"/educational/ClasslGL"
         },
         {
           "name": "课表管理",
-          "index": "5-3"
+          "index": "5-3",
+          "path":"/educational/TimetableGL"
         },
         {
           "name": "约课管理",
-          "index": "5-4"
+          "index": "5-4",
+          "path":"/educational/AppointmentGL"
         },
         {
           "name": "课程设置",
-          "index": "5-5"
+          "index": "5-5",
+          "path":"/educational/CourseSet"
         },
         {
           "name": "资料管理",
-          "index": "5-6"
+          "index": "5-6",
+          "path":"/educational/DataGL"
         }
       ]
 
@@ -115,27 +137,33 @@
       "index": "6",
       "children": [{
           "name": "课务管理",
-          "index": "6-1"
+          "index": "6-1",
+          "path":"/dailyaffairs/AffairsGL"
         },
         {
           "name": "线上课程",
-          "index": "6-2"
+          "index": "6-2",
+          "path":"/dailyaffairs/OnlineCourse"
         },
         {
           "name": "积分管理",
-          "index": "6-3"
+          "index": "6-3",
+          "path":"/dailyaffairs/IntegralGL"
         },
         {
           "name": "请假补课",
-          "index": "6-4"
+          "index": "6-4",
+          "path":"/dailyaffairs/MakeupLessons"
         },
         {
           "name": "学员签到",
-          "index": "6-5"
+          "index": "6-5",
+          "path":"/dailyaffairs/StudentSignin"
         },
         {
           "name": "接送管理",
-          "index": "6-6"
+          "index": "6-6",
+          "path":"/dailyaffairs/PickupGL"
         }
       ]
     },
@@ -144,15 +172,18 @@
       "index": "7",
       "children": [{
           "name": "我的课表",
-          "index": "7-1"
+          "index": "7-1",
+          "path":"/myteaching/MyTimetable"
         },
         {
           "name": "打卡作业",
-          "index": "7-2"
+          "index": "7-2",
+          "path":"/myteaching/PunchIn"
         },
         {
           "name": "线上课程",
-          "index": "7-3"
+          "index": "7-3",
+          "path":"/myteaching/OnlineCourse"
         }
       ]
     },
@@ -161,23 +192,28 @@
       "index": "8",
       "children": [{
           "name": "通知管理",
-          "index": "8-1"
+          "index": "8-1",
+          "path":"/administrative/NoticeGL"
         },
         {
           "name": "库存管理",
-          "index": "8-2"
+          "index": "8-2",
+          "path":"/administrative/StockGL"
         },
         {
           "name": "岗位管理",
-          "index": "8-3"
+          "index": "8-3",
+          "path":"/administrative/StationGL"
         },
         {
           "name": "员工管理",
-          "index": "8-4"
+          "index": "8-4",
+          "path":"/administrative/StaffGL"
         },
         {
           "name": "员工考勤",
-          "index": "8-5"
+          "index": "8-5",
+          "path":"/administrative/StaffCheck"
         }
       ]
     },
@@ -186,27 +222,33 @@
       "index": "9",
       "children": [{
           "name": "订单管理",
-          "index": "9-1"
+          "index": "9-1",
+          "path":"/finance/OrderGL"
         },
         {
           "name": "收支明细",
-          "index": "9-2"
+          "index": "9-2",
+          "path":"/finance/DetailedCash"
         },
         {
           "name": "易收宝",
-          "index": "9-3"
+          "index": "9-3",
+          "path":"/finance/YishouBao"
         },
         {
           "name": "费用收支",
-          "index": "9-4"
+          "index": "9-4",
+          "path":"/finance/CostCash"
         },
         {
           "name": "工资管理",
-          "index": "9-5"
+          "index": "9-5",
+          "path":"/finance/WagesGL"
         },
         {
           "name": "系统服务",
-          "index": "9-6"
+          "index": "9-6",
+          "path":"/finance/SystemService"
         }
       ]
     },
@@ -215,19 +257,23 @@
       "index": "10",
       "children": [{
           "name": "销售统计",
-          "index": "10-1"
+          "index": "10-1",
+          "path":"/statistical/SalesStatistics"
         },
         {
           "name": "教务汇总",
-          "index": "10-2"
+          "index": "10-2",
+          "path":"/statistical/EducationalSummary"
         },
         {
           "name": "名单分析",
-          "index": "10-3"
+          "index": "10-3",
+          "path":"/statistical/NamelistAnalysis"
         },
         {
           "name": "财务分析",
-          "index": "10-4"
+          "index": "10-4",
+          "path":"/statistical/FinanceAnalysis"
         }
       ]
     }

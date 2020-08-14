@@ -1,16 +1,15 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App'
 import router from './router'
+import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import '@/assets/public.css' /*引入公共样式*/
+import './assets/public.css' /*引入公共样式*/
+import './assets/eleui.css' /*引入需要修改的elementui样式*/
 import VCharts from 'v-charts'
+import VueResource from 'vue-resource'//vue-resource使用
 
-//vue-resource使用
-import VueResource from 'vue-resource'
 Vue.use(VueResource)
 Vue.use(Vuex)
 Vue.use(ElementUI)
@@ -21,11 +20,23 @@ Vue.use(VCharts)
 
 Vue.config.productionTip = false
 
-
+// router.beforeEach((to, from, next) => {
+//   //NProgress.start();
+//   if (to.path == '/login') {
+//     sessionStorage.removeItem('user');
+//   }
+//   let user = JSON.parse(sessionStorage.getItem('user'));
+//   if (!user && to.path != '/login') {
+//     next({ path: '/login' })
+//   } else {
+//     next()
+//   }
+// })
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

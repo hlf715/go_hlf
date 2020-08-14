@@ -1,0 +1,98 @@
+/* elementUI当中需要修改的样式 */
+
+/* 控制菜单组件不需要有边框 */
+.el-menu {
+  border: none;
+}
+
+/* 输入框样式统一 */
+.el-input-width {
+  width: 39%;
+  min-width: 150px;
+}
+.el-date-editor {
+  width: 39% !important;
+  min-width: 150px !important;
+}
+
+
+/* 下拉框样式修改 */
+.el-dropdown-link {
+  cursor: pointer;
+  font-size: 12px;
+}
+.el-icon-arrow-down {
+  margin-left: 0;
+}
+
+
+/* 分页样式修改 */
+.el-pagination {
+  /* 分页器浮动在右边 */
+  float: right;
+}
+
+.el-pagination .el-input__inner {
+  height: 22px;
+}
+
+.el-pagination .el-select__caret {
+  line-height: 22px;
+}
+
+
+
+/* 复选框和文字描述距离修改以及字体大小*/
+.el-checkbox__label {
+  padding-left: 4px;
+  font-size: 12px;
+}
+
+
+
+/* 表格样式修改 表头出现错位添加如下样式*/
+body .el-table th.gutter {
+  display: table-cell !important;
+}
+
+
+/* 弹窗样式修改 */
+.el-dialog__body{
+      font-size: 12px;
+      padding: 20px;
+}
+.el-dialog__header{
+      padding: 20px 20px 0 20px;
+}
+.el-dialog__footer{
+      padding: 0 20px 20px 20px;
+}
+
+
+/* 弹窗下的输入框前面的select宽度修改 */
+.el-dialog__body .el-input-group__prepend{
+  width: 45px;
+}
+
+.el-form-item__label{
+  font-size: 12px !important;
+  padding: 0;
+}
+
+
+
+/* 多个互斥单选框样式修改 */
+.el-radio {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.el-radio__label {
+  padding-left: 3px;
+  font-size: 12px;
+}
+
+/* 分割线 */
+.el-divider{
+  margin: 0 0 10px 0;
+}
